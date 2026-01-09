@@ -1,0 +1,162 @@
+/* Base Styles from previous extraction */
+body {
+    background-color: #050505;
+    color: #e5e5e5;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Sidebar Item & Actions - Robust Visibility */
+.sidebar-item {
+    position: relative;
+    /* Other styles handled by Tailwind classes in JS */
+}
+
+/* Ensure actions are hidden by default */
+.sidebar-actions {
+    display: none;
+    align-items: center;
+    gap: 2px;
+    /* gap-0.5 equiv */
+    margin-left: auto;
+    /* Push to right */
+}
+
+/* Show actions on hover */
+.sidebar-item:hover .sidebar-actions {
+    display: flex !important;
+}
+
+/* Action Button Base Styles */
+.action-btn {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    color: #9ca3af;
+    /* text-gray-400 */
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Delete Button Specifics */
+.action-btn-delete:hover {
+    background-color: rgba(239, 68, 68, 0.2);
+    /* hover:bg-red-500/20 */
+    color: #f87171;
+    /* hover:text-red-400 */
+}
+
+.action-btn-delete {
+    color: rgba(239, 68, 68, 0.6);
+    /* text-red-500/60 */
+}
+
+/* Select Dropdown Styling */
+select {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: #e5e5e5 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.5) !important;
+}
+
+select option {
+    background-color: #1a1a1a !important;
+    color: #e5e5e5 !important;
+    padding: 8px;
+}
+
+select option:hover,
+select option:focus,
+select option:checked {
+    background-color: rgba(59, 130, 246, 0.2) !important;
+    color: white !important;
+}
+
+/* Specific selectors for collection and method dropdowns */
+#collection-selector,
+#input-method {
+    background-color: #1a1a1a !important;
+    color: #e5e5e5 !important;
+}
+
+#collection-selector option,
+#input-method option {
+    background-color: #0a0a0a !important;
+    color: #e5e5e5 !important;
+}
+
+/* Toast Notifications */
+.toast {
+    background: rgba(10, 10, 10, 0.82);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 0.3s ease;
+    pointer-events: auto;
+    white-space: nowrap;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast.success {
+    border-left: 4px solid #10b981;
+}
+
+.toast.error {
+    border-left: 4px solid #ef4444;
+}
+
+.toast i {
+    font-size: 16px;
+}
+
+.toast.success i {
+    color: #10b981;
+}
+
+.toast.error i {
+    color: #ef4444;
+}
