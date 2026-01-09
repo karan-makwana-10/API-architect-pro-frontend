@@ -10,7 +10,7 @@
 console.log('🚀 API Architect Pro v2.0 - Postman Import Support Enabled');
 
 // --- Constants & Config ---
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://api-architect-pro.onrender.com/api';
 const DEFAULT_COLLECTION_ID = 'default-collection';
 
 const INITIAL_COLLECTION = {
